@@ -1,0 +1,91 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebApplication1.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    
+    <meta charset ="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <script src="Lib/JQuery.js" ></script>
+    <link rel="stylesheet" href="Lib/bootstrap_4/css/bootstrap.css" />
+    <script src="Lib/bootstrap_4/js/bootstrap.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>  
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <title></title>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark sticky-top" style="background-color: rgba(0, 0, 51, 0.6);">
+            <div class="col-xl-3">
+                <a class="navbar-brand" href="#">E-Valley</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="col-xl-8 justify-content-center" style="float: none; margin: 0 auto;">
+                <div class="input-group" style="width:80%;">
+                    <input type="text" id="txt_SearchText" class="form-control" placeholder="Search" />
+                    <div class="input-group-append">
+                        <input type="button" id="btn_NavSearch" class="btn btn-success" value="Search" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <ul class="navbar-nav" >
+                    
+                        <asp:LoginView runat="server" ID="LoginView">
+                            <AnonymousTemplate>
+                                <li class="nav-item"><asp:Hyperlink runat="server" ID="btn_login" NavigateUrl="~/Login.aspx">Login</asp:Hyperlink></li>
+                            </AnonymousTemplate>
+                            <LoggedInTemplate>
+                                <li class="nav-item"><asp:Hyperlink runat="server" ID="btn_logout" NavigateUrl="~/Logout.aspx">Logout</asp:Hyperlink></li>
+                            </LoggedInTemplate>
+                        </asp:LoginView>
+                </ul>
+            </div>
+                
+        </nav>
+      
+
+        <nav class="navbar navbar-expand-sm navbar-dark sticky-top" style="background-color: rgba(0, 0, 51, 1.0);">
+           
+            <div class="row"  >
+              <ul class="navbar-nav">
+                <li class="col-sm-3 " >
+                  <a class="nav-link"  href="Default.aspx">Home
+                    <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li class="col-sm-3">
+                  <a class="nav-link" href="#">Category </a>
+                </li>
+                <li class="col-sm-3">
+                  <a class="nav-link" href="#">Promotions</a>
+                </li>
+                <li class="col-sm-3">
+                  <a class="nav-link" href="#">About Us</a>
+                </li>
+                  <li class="col-sm-3">
+                  <a class="nav-link" href="#">Wishlist</a>
+                </li>
+                  <li class="col-sm-3">
+                  <a class="nav-link" href="#">Cart</a>
+                </li>
+              </ul>
+            </div>
+        </nav>
+        
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+        </asp:ContentPlaceHolder>
+        <footer class="py-2 bg-dark">
+            <div class="container">
+                <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+            </div>
+        </footer>
+</body>
+</html>
